@@ -86,8 +86,8 @@ public class Human {
             "surname = "+this.surname+","+
             "year="+ this.year+","+
             "iq="+this.iq+","+
-            "mother="+this.mother.surname + this.mother.name + ","+
-            "father="+this.father.surname+this.father.name + ","+
+            "mother="+this.mother.surname + " " + this.mother.name + ","+
+            "father="+this.father.surname + " " + this.father.name + ","+
             "pet="+pet.toString();
     }
 }
