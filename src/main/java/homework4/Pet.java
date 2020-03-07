@@ -55,12 +55,13 @@ public class Pet {
         System.out.println("I need to cover it up");
     }
 
-    @Override
+
+    }@Override
     public String toString() {
         return species + "{"+
                 "nickname =" + this.name +","+
                 "age =" +this.age +","+
                 "trickLevel =" +this.trickLevel +","+
                 "habits ="+ Arrays.toString(habit) +"}";
-    }
+}
 }
