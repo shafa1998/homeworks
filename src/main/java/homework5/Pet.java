@@ -4,10 +4,21 @@ import java.util.Arrays;
 
 public class Pet {
     private String species;
-    private String name;
+    private String nickName;
     private int age;
     private int trickLevel;
     private String[] habit;
+
+    public Pet() {
+    }
+
+    public Pet(String species, String nickName, int age, int trickLevel, String[] habit) {
+        this.species = species;
+        this.nickName = nickName;
+        this.age = age;
+        this.trickLevel = trickLevel;
+        this.habit = habit;
+    }
 
     public String getSpecies() {
         return species;
@@ -17,12 +28,12 @@ public class Pet {
         this.species = species;
     }
 
-    public String getName() {
-        return name;
+    public String getNickName() {
+        return nickName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
     }
 
     public int getAge() {
@@ -49,10 +60,20 @@ public class Pet {
         this.habit = habit;
     }
 
+    public void eat(){
+        System.out.println("Im eating");
+    }
+    public void respond(){
+        System.out.println("Hello, owner. I am "+nickName+" I miss you!");
+    }
+    public void  foul(){
+        System.out.println("I need to cover it up!");
+    }
+
     @Override
     public String toString() {
         return species + "{" +
-                "nickname =" + this.name + "," +
+                "nickname =" + this.nickName+ "," +
                 "age =" + this.age + "," +
                 "trickLevel =" + this.trickLevel + "," +
                 "habits =" + Arrays.toString(habit) + "}";
