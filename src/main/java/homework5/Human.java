@@ -10,7 +10,30 @@ public class Human {
     private Pet pet;
     private Human mother;
     private Human father;
-    private  String[][] scedule;
+    private  String[][] schedule;
+    private  Family family;
+
+    public Human() {
+    }
+
+    public Human(String name, String surname, int year, int iq, Pet pet, Human mother, Human father, String[][] schedule, Family family) {
+        this.name = name;
+        this.surname = surname;
+        this.year = year;
+        this.iq = iq;
+        this.pet = pet;
+        this.mother = mother;
+        this.father = father;
+        this.schedule = schedule;
+        this.family = family;
+    }
+    public void greetPet(Pet name) {
+        System.out.println("Welcome," + name);
+    }
+
+    public void describePet(String species,int age) {
+        System.out.printf("I have %s,he is %d years old,he is %s", species, age,age>50?"very sly":"almost not sly");
+    }
 
     public String getName() {
         return name;
@@ -68,24 +91,35 @@ public class Human {
         this.father = father;
     }
 
-    public String[][] getScedule() {
-        return scedule;
+    public String[][] getSchedule() {
+        return schedule;
     }
 
-    public void setScedule(String[][] scedule) {
-        this.scedule = scedule;
+    public void setSchedule(String[][] schedule) {
+        this.schedule = schedule;
+    }
+
+    public Family getFamily() {
+        return family;
+    }
+
+    public void setFamily(Family family) {
+        this.family = family;
     }
 
     @Override
     public String toString() {
         return "Human{" +
-                "name ="+this.name+","+
-                "surname = "+this.surname+","+
-                "year="+ this.year+","+
-                "iq="+this.iq+","+
-                "mother="+this.mother.surname + " " + this.mother.name + ","+
-                "father="+this.father.surname + " " + this.father.name + ","+
-                "pet="+pet.toString();
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", year=" + year +
+                ", iq=" + iq +
+                ", pet=" + pet +
+                ", mother=" + mother +
+                ", father=" + father +
+                ", schedule=" + Arrays.toString(schedule) +
+                ", family=" + family +
+                '}';
     }
 }
 
