@@ -9,6 +9,15 @@ public class Pet {
     private int age;
     private int trickLevel;
     private String[] habit;
+    private Family family;
+
+    public Family getFamily() {
+        return family;
+    }
+
+    public void setFamily(Family family) {
+        this.family = family;
+    }
 
     public Pet() {
     }
