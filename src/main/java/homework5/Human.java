@@ -7,32 +7,42 @@ public class Human {
     private String surname;
     private int year;
     private int iq;
-    private Pet pet;
-    private Human mother;
-    private Human father;
     private  String[][] schedule;
     private  Family family;
 
     public Human() {
     }
 
-    public Human(String name, String surname, int year, int iq, Pet pet, Human mother, Human father, String[][] schedule, Family family) {
+    public Human(String name, String surname, int year, int iq, String[][] schedule, Family family) {
         this.name = name;
         this.surname = surname;
         this.year = year;
         this.iq = iq;
-        this.pet = pet;
-        this.mother = mother;
-        this.father = father;
         this.schedule = schedule;
         this.family = family;
     }
-    public void greetPet(Pet name) {
-        System.out.println("Welcome," + name);
+
+    public Human(String name, String surname, int year) {
+        this.name = name;
+        this.surname = surname;
+        this.year = year;
     }
 
-    public void describePet(String species,int age) {
-        System.out.printf("I have %s,he is %d years old,he is %s", species, age,age>50?"very sly":"almost not sly");
+    public void welcomePet(Pet name) {
+        System.out.println("Welcome," + family.getPet().getNickName());
+    }
+
+    public void describeFavoritePet() {
+        System.out.printf("I have %s,he is %d years old,he is %s", family.getPet().getSpecies(), family.getPet().getAge(),family.getPet().getAge()>50?"very sly":"almost not sly");
+    }
+    public boolean feed(boolean feedingTime){
+        if (feedingTime){
+            System.out.println("I will feed my pet");
+            return true;
+        }else{
+            System.out.println("My pet is not hungry");
+            return  false;
+        }
     }
 
     public String getName() {
@@ -67,30 +77,6 @@ public class Human {
         this.iq = iq;
     }
 
-    public Pet getPet() {
-        return pet;
-    }
-
-    public void setPet(Pet pet) {
-        this.pet = pet;
-    }
-
-    public Human getMother() {
-        return mother;
-    }
-
-    public void setMother(Human mother) {
-        this.mother = mother;
-    }
-
-    public Human getFather() {
-        return father;
-    }
-
-    public void setFather(Human father) {
-        this.father = father;
-    }
-
     public String[][] getSchedule() {
         return schedule;
     }
@@ -110,15 +96,12 @@ public class Human {
     @Override
     public String toString() {
         return "Human{" +
-                "name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", year=" + year +
-                ", iq=" + iq +
-                ", pet=" + pet +
-                ", mother=" + mother +
-                ", father=" + father +
-                ", schedule=" + Arrays.toString(schedule) +
-                ", family=" + family +
+                "name='" + getName() + '\'' +
+                ", surname='" + getSurname() + '\'' +
+                ", year=" + getYear() +
+                ", iq=" + getIq() +
+                ", schedule=" + Arrays.deepToString(schedule)+
+                ", family=" + getFamily() +
                 '}';
     }
 }
