@@ -1,7 +1,7 @@
 package homework5;
 
 import java.util.Arrays;
-
+import java.util.Objects;
 public class Human {
     private String name;
     private String surname;
@@ -13,13 +13,13 @@ public class Human {
     public Human() {
     }
 
-    public Human(String name, String surname, int year, int iq, String[][] schedule, Family family) {
+    public Human(String name, String surname, int year, int iq, String[][] schedule) {
         this.name = name;
         this.surname = surname;
         this.year = year;
         this.iq = iq;
         this.schedule = schedule;
-        this.family = family;
+
     }
 
     public Human(String name, String surname, int year) {
@@ -28,8 +28,8 @@ public class Human {
         this.year = year;
     }
 
-    public void welcomePet(Pet name) {
-        System.out.println("Welcome," + family.getPet().getNickName());
+    public void welcomePet() {
+        System.out.println("Welcome," + this.family.getPet().getNickName());
     }
 
     public void describeFavoritePet() {
@@ -96,13 +96,13 @@ public class Human {
     @Override
     public String toString() {
         return "Human{" +
-                "name='" + getName() + '\'' +
-                ", surname='" + getSurname() + '\'' +
-                ", year=" + getYear() +
-                ", iq=" + getIq() +
-                ", schedule=" + Arrays.deepToString(schedule)+
-                ", family=" + getFamily() +
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", year=" + year +
+                ", iq=" + iq +
+                ", schedule=" + Arrays.deepToString(getSchedule()) +
                 '}';
     }
-}
 
+
+}
