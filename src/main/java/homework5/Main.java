@@ -10,22 +10,31 @@ public class Main {
         Family family= new Family(mother,father);
         Human child1= new Human("Kenan","Memmedov",5);
         Human child2=new Human("Gunel","Memmedova",3);
+        System.out.println(mother);
+        System.out.println(child1);
 
         family.addChild(child1);
         family.addChild(child2);
-//        System.out.println(family.countFamily());
+        System.out.println(Arrays.toString(family.getChildren()));
+        System.out.println(child1.getFamily());
+        System.out.println(family.countFamily());
 
-//        family.deleteChild(child1);
-//        System.out.println(family.countFamily());
+        family.deleteChild(child1);
+        System.out.println(family.countFamily());
+
+
 
         Pet pet= new Pet("cat","mestan",1, 50,new String[]{"sleeping","eating"});
-        System.out.println(pet.toString());
+        System.out.println(pet);
         family.setPet(pet);
-        System.out.println(family.countFamily());
-        System.out.println(Arrays.toString(family.getChildren()));
+        System.out.println(pet.getFamily());
+        System.out.println(child2.getFamily().getPet());
 
-
-//        System.out.println(family.toString());
+        mother.feed(true);
+//
+//        child2.welcomePet();
+//        child2.describeFavoritePet();
+//        System.out.println(family.countFamily());
     }
 
 }
