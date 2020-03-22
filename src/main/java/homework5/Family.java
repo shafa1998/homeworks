@@ -4,10 +4,10 @@ import java.util.Arrays;
 import java.util.Objects;
 
 public class Family {
-        private Human mother;
-        private Human father;
-        private Human [] children=new Human[0];
-        private Pet pet;
+    private Human mother;
+    private Human father;
+    private Human [] children=new Human[0];
+    private Pet pet;
 
     public Family() {
     }
@@ -54,6 +54,7 @@ public class Family {
 
     public void setPet(Pet pet) {
         this.pet = pet;
+        pet.setFamily(this);
     }
     public int countFamily(){
         int count=2+children.length;
