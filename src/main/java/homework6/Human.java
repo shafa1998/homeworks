@@ -1,26 +1,25 @@
 package homework6;
 
 import java.util.Arrays;
-
+import java.util.Objects;
 public class Human {
-    String name;
-    String surname;
-    int year;
-    int iq;
-    Pet pet;
-    Human mother;
-    Human father;
-    String[][] scedule;
+    private String name;
+    private String surname;
+    private int year;
+    private int iq;
+    private String[][] schedule;
+    private Family family;
 
-    public Human(String name, String surname, int year, int iq, Pet pet, Human mother, Human father, String[][] scedule) {
+    public Human() {
+    }
+
+    public Human(String name, String surname, int year, int iq, String[][] schedule) {
         this.name = name;
         this.surname = surname;
         this.year = year;
         this.iq = iq;
-        this.pet = pet;
-        this.mother = mother;
-        this.father = father;
-        this.scedule = scedule;
+        this.schedule = schedule;
+
     }
 
     public Human(String name, String surname, int year) {
@@ -29,65 +28,86 @@ public class Human {
         this.year = year;
     }
 
-    public Human(String name, String surname, int year, Human mother, Human father) {
-        this.name = name;
-        this.surname = surname;
-        this.year = year;
-        this.mother = mother;
-        this.father = father;
+    public void finalize(){
+        System.out.println(getName()+" "+getSurname()+" deleted");
     }
 
-    public Human() {
+    public void welcomePet() {
+        System.out.println("Welcome," + this.family.getPet().getNickName());
+    }
+
+    public void describeFavoritePet() {
+        System.out.printf("I have %s,he is %d years old,he is %s", family.getPet().getSpecies(), family.getPet().getAge(), family.getPet().getAge() > 50 ? "very sly" : "almost not sly");
+    }
+
+    public boolean feed(boolean feedingTime) {
+        if (feedingTime) {
+            System.out.println("I will feed my pet");
+            return true;
+        } else {
+            System.out.println("My pet is not hungry");
+            return false;
+        }
     }
 
     public String getName() {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getSurname() {
         return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
     public int getYear() {
         return year;
     }
 
+    public void setYear(int year) {
+        this.year = year;
+    }
+
     public int getIq() {
         return iq;
     }
 
-    public Pet getPet() {
-        return pet;
+    public void setIq(int iq) {
+        this.iq = iq;
     }
 
-    public Human getMother() {
-        return mother;
+    public String[][] getSchedule() {
+        return schedule;
     }
 
-    public Human getFather() {
-        return father;
+    public void setSchedule(String[][] schedule) {
+        this.schedule = schedule;
     }
 
-    public String[][] getScedule() {
-        return scedule;
+    public Family getFamily() {
+        return family;
     }
-    void greetPet(){
-        System.out.println("Hello " + pet.getName());
-    }
-    void describePet(){
-        System.out.println("I have a"+ pet.getSpecies() + "he is "
-                +pet.getAge() + "years old,he is " + (pet.getTrickLevel()>50 ? "very sly" : "almost not sly"));
+
+    public void setFamily(Family family) {
+        this.family = family;
     }
 
     @Override
     public String toString() {
         return "Human{" +
-                "name ="+this.name+","+
-                "surname = "+this.surname+","+
-                "year="+ this.year+","+
-                "iq="+this.iq+","+
-                "mother="+this.mother.surname + " " + this.mother.name + ","+
-                "father="+this.father.surname + " " + this.father.name + ","+
-                "pet="+pet.toString();
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", year=" + year +
+                ", iq=" + iq +
+                ", schedule=" + Arrays.deepToString(getSchedule()) +
+                '}';
     }
+
+
 }
