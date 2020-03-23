@@ -111,7 +111,10 @@ public class Family {
             return true;
         }
     }
-
+    @Override
+    protected void finalize() throws Throwable{
+        System.out.println("Finalizing done in Family class");
+    }
 
     @Override
     public String toString() {
