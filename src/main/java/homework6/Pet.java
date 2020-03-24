@@ -3,7 +3,7 @@ package homework6;
 import java.util.Arrays;
 import java.util.Objects;
 
-public class Pet {
+public  class Pet {
     private Species species;
     private String nickName;
     private int age;
