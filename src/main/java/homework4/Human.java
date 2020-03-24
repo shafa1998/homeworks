@@ -3,14 +3,14 @@ package homework4;
 import java.util.Arrays;
 
 public class Human {
-     String name;
-     String surname;
-     int year;
-     int iq;
-     Pet pet;
-     Human mother;
-     Human father;
-     String[][] scedule;
+    String name;
+    String surname;
+    int year;
+    int iq;
+    Pet pet;
+    Human mother;
+    Human father;
+    String[][] scedule;
 
     public Human(String name, String surname, int year, int iq, Pet pet, Human mother, Human father, String[][] scedule) {
         this.name = name;
@@ -82,12 +82,12 @@ public class Human {
     @Override
     public String toString() {
         return "Human{" +
-            "name ="+this.name+","+
-            "surname = "+this.surname+","+
-            "year="+ this.year+","+
-            "iq="+this.iq+","+
-            "mother="+this.mother.surname + " " + this.mother.name + ","+
-            "father="+this.father.surname + " " + this.father.name + ","+
-            "pet="+pet.toString();
+                "name ="+this.name+","+
+                "surname = "+this.surname+","+
+                "year="+ this.year+","+
+                "iq="+this.iq+","+
+                "mother="+this.mother.surname + " " + this.mother.name + ","+
+                "father="+this.father.surname + " " + this.father.name + ","+
+                "pet="+pet.toString();
     }
 }

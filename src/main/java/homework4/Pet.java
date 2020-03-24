@@ -56,7 +56,7 @@ public class Pet {
     }
 
 
-    }@Override
+    @Override
     public String toString() {
         return species + "{"+
                 "nickname =" + this.name +","+
