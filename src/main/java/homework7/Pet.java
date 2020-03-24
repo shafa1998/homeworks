@@ -1,12 +1,12 @@
 package homework7;
 
-import homework6.Species;
+import homework7.Species;
 
 import java.util.Arrays;
 import java.util.Objects;
 
 public abstract class Pet {
-    private Species species;
+    public Species species=Species.unknown;
     private String nickName;
     private int age;
     private int trickLevel;
@@ -24,7 +24,7 @@ public abstract class Pet {
     public Pet() {
     }
 
-    public Pet(Species species, String nickName, int age, int trickLevel, String[] habit, Family family) {
+    public Pet( String nickName, int age, int trickLevel, String[] habit, Family family) {
         this.species = species;
         this.nickName = nickName;
         this.age = age;
@@ -33,13 +33,11 @@ public abstract class Pet {
         this.family = family;
     }
 
-    public Species getSpecies() {
+    public homework7.Species getSpecies() {
         return species;
     }
 
-    public void setSpecies(Species species) {
-        this.species = species;
-    }
+
 
     public String getNickName() {
         return nickName;
@@ -76,9 +74,8 @@ public abstract class Pet {
     public void eat(){
         System.out.println("Im eating");
     }
-    public void respond(){
-        System.out.println("Hello, owner. I am "+nickName+" I miss you!");
-    }
+    public abstract void respond();
+
     public void  foul(){
         System.out.println("I need to cover it up!");
     }

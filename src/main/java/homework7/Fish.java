@@ -1,13 +1,18 @@
 package homework7;
 
-import homework6.Species;
+import homework7.Species;
 
-public class Fish extends Pet {
+public class Fish extends Pet implements Foul {
     public Fish() {
     }
 
-    public Fish(Species species, String nickName, int age, int trickLevel, String[] habit, Family family) {
-        super(species, nickName, age, trickLevel, habit, family);
+    public Fish( String nickName, int age, int trickLevel, String[] habit, Family family) {
+        super( nickName, age, trickLevel, habit, family);
+        this.species=Species.fish;
+    }
+
+    public void foul(){
+        System.out.println("I am swimming");
     }
 
     @Override

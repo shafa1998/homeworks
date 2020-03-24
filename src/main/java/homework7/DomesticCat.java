@@ -1,13 +1,14 @@
 package homework7;
 
-import homework6.Species;
+import homework7.Species;
 
-public class DomesticCat extends Pet {
+public class DomesticCat extends Pet implements Foul {
     public DomesticCat() {
     }
 
-    public DomesticCat(Species species, String nickName, int age, int trickLevel, String[] habit, Family family) {
-        super(species, nickName, age, trickLevel, habit, family);
+    public DomesticCat(String nickName, int age, int trickLevel, String[] habit, Family family) {
+        super(nickName, age, trickLevel, habit, family);
+        this.species=Species.domesticcat;
     }
 
 

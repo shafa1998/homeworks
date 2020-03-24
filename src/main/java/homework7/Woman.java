@@ -10,10 +10,15 @@ public class Woman extends Human implements Greeting  {
 
     public Woman(String name, String surname, int year) {
         super(name, surname, year);
+        this.setFamily(super.getFamily());
+    }
+
+    public void makeup(){
+        System.out.println("make up");
     }
 
     @Override
     public void greet() {
-        System.out.println(this.getFamily().getPet().getNickName() +", ");
+        System.out.println(" nice to meet you!");
     }
 }
