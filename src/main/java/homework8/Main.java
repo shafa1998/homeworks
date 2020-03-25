@@ -34,6 +34,5 @@ public class Main {
         dog2.respond();
         man.greet();
         woman.greet();
-        System.out.println(woman);
         }
     }
