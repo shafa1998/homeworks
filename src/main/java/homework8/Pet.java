@@ -1,36 +1,35 @@
 package homework8;
 
-import homework6.Species;
+import homework8.Species;
 
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.Set;
 
 public abstract class Pet {
-    private Species species;
+    public Species species=Species.UNKNOWN;
     private String nickName;
     private int age;
     private int trickLevel;
-    private Set<String>habit;
+    private Set<String> habit;
     private Family family;
+
+    public Pet() {
+    }
+
+    public Pet( String nickName, int age, int trickLevel, Set<String> habit, Family family) {
+        this.nickName = nickName;
+        this.age = age;
+        this.trickLevel = trickLevel;
+        this.habit = habit;
+        this.family = family;
+    }
 
     public Family getFamily() {
         return family;
     }
 
     public void setFamily(Family family) {
-        this.family = family;
-    }
-
-    public Pet() {
-    }
-
-    public Pet(Species species, String nickName, int age, int trickLevel, Set<String> habit, Family family) {
-        this.species = species;
-        this.nickName = nickName;
-        this.age = age;
-        this.trickLevel = trickLevel;
-        this.habit = habit;
         this.family = family;
     }
 
@@ -77,9 +76,8 @@ public abstract class Pet {
     public void eat(){
         System.out.println("Im eating");
     }
-    public void respond(){
-        System.out.println("Hello, owner. I am "+nickName+" I miss you!");
-    }
+    public abstract void respond();
+
     public void  foul(){
         System.out.println("I need to cover it up!");
     }

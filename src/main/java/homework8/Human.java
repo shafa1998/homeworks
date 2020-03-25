@@ -8,19 +8,11 @@ public class Human {
     private String surname;
     private int year;
     private int iq;
-    private Map<Integer, String>schedule;
+    private Pet pet;
+    private Map<Integer,String> schedule;
     private Family family;
 
     public Human() {
-    }
-
-    public Human(String name, String surname, int year, int iq, Map<Integer, String> schedule, Family family) {
-        this.name = name;
-        this.surname = surname;
-        this.year = year;
-        this.iq = iq;
-        this.schedule = schedule;
-        this.family = family;
     }
 
     public Human(String name, String surname, int year) {
@@ -29,16 +21,20 @@ public class Human {
         this.year = year;
     }
 
+    public Human(String name, String surname, int year, int iq, Map<Integer, String> schedule) {
+        this.name = name;
+        this.surname = surname;
+        this.year = year;
+        this.iq = iq;
+        this.schedule = schedule;
+    }
+
     public void finalize(){
         System.out.println(getName()+" "+getSurname()+" deleted");
     }
 
-    public void welcomePet() {
-        System.out.println("Welcome," + this.family.getPet().getNickName());
-    }
-
-    public void describeFavoritePet() {
-        System.out.printf("I have %s,he is %d years old,he is %s", family.getPet().getSpecies(), family.getPet().getAge(), family.getPet().getAge() > 50 ? "very sly" : "almost not sly");
+    public void welcomePet(String nickname) {
+        System.out.println("Welcome," + nickname);
     }
 
     public boolean feed(boolean feedingTime) {
@@ -49,6 +45,14 @@ public class Human {
             System.out.println("My pet is not hungry");
             return false;
         }
+    }
+
+    public Pet getPet() {
+        return pet;
+    }
+
+    public void setPet(Pet pet) {
+        this.pet = pet;
     }
 
     public String getName() {
@@ -98,7 +102,6 @@ public class Human {
     public void setFamily(Family family) {
         this.family = family;
     }
-
 
     @Override
     public String toString() {
