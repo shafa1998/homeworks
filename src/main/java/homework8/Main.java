@@ -25,7 +25,6 @@ public class Main {
         };
         Set<Pet> pets = new HashSet<>();
         pets.add(dog2);
-        family.setPet(pets);
         System.out.println(family);
         System.out.println(dog2);
         System.out.println(pet);
